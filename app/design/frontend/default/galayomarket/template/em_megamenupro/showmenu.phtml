@@ -8,7 +8,7 @@
 
 <?php if (!empty($menu)): ?>
 <div class="em_nav">
-    <div> 
+    <div id="left-menu-vip">
     <?php if($data['type'] == 1): ?>
         <div class="shopby-title" id="displayText"><a href="#">SHOP BY DEPARTMENT</a><span class="option">nav</span></div>
     <?php endif; ?>
@@ -83,42 +83,48 @@
 		var trigger = false;
         function toogleMenuPro(){
             var $=jQuery;
-            var container = $("#em-vnav");			
-			if(!trigger){
-				if(checkMobile == false){
-					if($("body").hasClass("adapt-0")==false){
-						$("#displayText").unbind("click");
-						if (!($("body").hasClass("cms-index-index"))){		
-							container.hide();
-							$("#em-vnav").parent().hover(
-								function( event ){
-									event.preventDefault();
-									container.fadeToggle('fast');
-								}
-							);
-						}
-					}else{
-						$("#em-vnav").parent().unbind("mouseenter mouseleave");
-						container.hide();
-						$("#displayText").click(
-							function( event ){
-								event.preventDefault();
-								container.fadeToggle('fast');
-							}
-						);
-					}				
-				}else{
-					container.hide();
-					$("#displayText").unbind('click');
-					$("#displayText").click(
-					function( event ){
-						event.preventDefault();
-						container.slideToggle(200);
-					}
-					);
-				} 
-			}
-			
+            var container = $("#em-vnav");
+            jQuery('#left-menu-vip').hover(function(){
+                container.show();
+                jQuery(this).hover();
+            },function(){
+                container.hide();
+            })
+//			if(!trigger){
+//				if(checkMobile == false){
+//					if($("body").hasClass("adapt-0")==false){
+//						$("#displayText").unbind("click");
+//						if (!($("body").hasClass("cms-index-index"))){
+//							container.hide();
+//							$("#em-vnav").parent().hover(
+//								function( event ){
+//									event.preventDefault();
+//									container.fadeToggle('fast');
+//								}
+//							);
+//						}
+//					}else{
+//						$("#em-vnav").parent().unbind("mouseenter mouseleave");
+//						container.hide();
+//						$("#displayText").click(
+//							function( event ){
+//								event.preventDefault();
+//								container.fadeToggle('fast');
+//							}
+//						);
+//					}
+//				}else{
+//					container.hide();
+//					$("#displayText").unbind('click');
+//					$("#displayText").click(
+//					function( event ){
+//						event.preventDefault();
+//						container.slideToggle(200);
+//					}
+//					);
+//				}
+//			}
+
         };
 		
 		jQuery(document).ready(function(){
