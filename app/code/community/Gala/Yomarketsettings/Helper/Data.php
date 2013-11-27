@@ -128,7 +128,7 @@ class Gala_Yomarketsettings_Helper_Data extends Mage_Core_Helper_Abstract
 		$level = $category->getLevel();
 		$html = '';
 		for($i = 0;$i < $level;$i++){
-			$html .= '&mdash;&ndash;';
+			$html .= '';
 		}
 		if($level == 1)	return $html.' '.$this->__("All Categories");
 		else return $html.' '.$category->getName();
