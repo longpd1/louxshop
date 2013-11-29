@@ -92,7 +92,7 @@ class Gala_Yomarketsettings_Helper_Data extends Mage_Core_Helper_Abstract
 			$page->setData($dataPage)->save();
 		return $page;
 	}
-    
+
     // For search by category
     public function getCategoriesCustomSearch($parent,$curId){
 		$result = '';
